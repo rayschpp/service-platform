@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  eureka-server:
+    build: ../eureka-server
+    image: rayschpp/eureka-server
+    ports:
+      - 8761:8761
+    networks:
+      - platform
+
+  admin-server:
+    build: ../admin-server
+    image: rayschpp/admin-server
+    ports:
+      - 8762:8762
+    networks:
+      - platform
+
+networks:
+  platform:
+
